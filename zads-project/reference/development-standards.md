@@ -28,49 +28,20 @@
 
 ### 编写技术方案
 
-读取 `<产品文档>`,  `docs/engineering/frontend-rules.md`, `docs/engineering/backend-rules.md`和 `contract/`目录下的结构。
-
-模板参考[[dev/dev-proposal-template.md]]。
-
-使用[[git.md]]规范，分支前缀的`<type>`使用`proposal`，分支基于`<feat-branch>`，编写完成后写入`proposals`文件，路径为`docs/engineering/proposals/<年月日>-proposal-<功能>.md`，并提pull request，合并的目标分支是`<feat-branch>`，完成后中断agent循环，让用户review这个pull request。
-
-如果有修改意见则让提取pull request中的review comment和inline review comment，进行修改，如果用户显式告知review通过则操作合并这个pull request到`<feat-branch>`。
+USE FOR: write proposals, update proposals
+REFERENCE: [[dev/dev-proposal-template.md]]
 
 ### 更新Contract
 
-读取 `<产品文档>`,  `docs/engineering/frontend-rules.md`, `docs/engineering/backend-rules.md`和 `contract/`目录下的结构。
-
-使用[[git.md]]规范，分支前缀的`<type>`使用`contract`，分支基于`<feat-branch>`（可在`proposal`中找到这个branch），在上生成对应的 contract schema。并提交，如果有`pull request`的工具，则提起`pull request`让用户审批。此时中断Agent循环，让用户输入是否审批完成。
-
-如果用户显示告知review通过，则操作这个`pull request`合并到`<feat-branch>`
-
-### 并行
+USE FOR: write contract, update contract
+REFERENCE: [[dev/update-contract.md]]
 
 ### 编写实现
 
-读取 `<产品文档>`，`contract/`目录下的结构和对应的`proposal`文档。
+USE FOR: implements, write code, implmenent
+REFERENCE: [[dev/write-implementation.md]]
 
-对于前端项目：加载`docs/engineering/frontend-rules.md`
-对于后端项目：加载`docs/engineering/backend-rules.md`
+### 编排服务
 
-按照项目结构，单个`<子项目>`使用`@general` subagent，委托进行关于`proposals`文件的这个`<子项目>`部分的开发。提示词如下：
-```
-读取 `<产品文档>`，`contract/`目录下的结构和<proposal>文档，在`<子项目>`中实现这个需求，并覆盖单元测试直到通过。
-```
-
-更新`todo`，为每一项子项目新增`todo`，并在subagent执行完成后完成这个`todo`，待办项有
-
-- `<子项目>`代码实现
-- `<子项目>`单元测试覆盖
-- `<子项目>`执行单元测试
-- `<子项目>`更新AGENTS.md   - 按照本次的修改内容，更新AGENTS.md的内容。
-
-举例说明，假设有如下项目结构
-```
-servers/api   - 使用@general 委托开发`proposals`关于 server/api的变动
-apps/web      - 使用@general 委托开发`proposals`关于 apps/web的变动   
-```
-
-#### Explore固定知识库
-
-如果需要使用`Explore`这个subagent进行项目理解时，将这个subagent的输出创建或更新到对应项目的`AGENTS.md`。
+USE FOR: service orchestration, update infra, infurstructure
+REFERENCE: [[dev/infra-orchestrator.md]]

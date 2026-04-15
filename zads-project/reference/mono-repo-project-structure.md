@@ -37,7 +37,6 @@ packages/common-package-B
 docs/product/draft/20260415-some-domain-featrue.md
 docs/product/shipping/20260415-another-domain-featrue.md
 docs/product/released/20260415-one-another-domain-featrue.md
-docs/dev/20260415-proposal-another-feature.md
 
 contracts/changes/pending/20260415-changes-for-some-domain-featrue.md
 contracts/changes/applied/

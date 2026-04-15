@@ -25,3 +25,7 @@
 - 外部指定的其他type
 
 `<slug>`为上下文中确定的分支slug
+
+## Pull Request规范
+
+在合并pull request后，需要删除远端和本地的分支，注意**不要**删除目标分支。
