@@ -46,7 +46,19 @@ aspire docs search get-started-with-the-postgresql-integration
 
 ## 编排技巧
 
-#### 服务依赖设置
+### 指定服务镜像Tag
+
+使用 `.withImageTag(tag: string)`可以覆盖Docker Resource的tag
+
+### JavaScript App集成
+
+使用 `addJavaScriptApp` API，第三个参数是 `{ runScriptName: "" }` 这样的对象，如果你想执行`dev` 这个脚本例如：
+
+```typescript
+  .addJavaScriptApp('service-name', 'project_relative_path', { runScriptName: 'dev' });
+```
+
+### 服务依赖设置
 
 分析后端服务分别对中间设置的依赖，使用如下pattern进行依赖，`withReference`是将对应资源的`parameter resource`注入到目标服务中，`waitFor`则是标记这个服务需要等到目标服务成功启动，health check完成后再进行启动。
 
@@ -58,7 +70,7 @@ const backend = await builder
   .withReference(redis).waitFor(redis);
 ```
 
-#### 环境变量注入
+### 环境变量注入
 
 我们可以通过`.withEnvironment()`注入环境变量，可以从其他的resource中获取对应的endpoint，注意 api.getEndpoint这个API需要await，示例如下：
 
@@ -72,7 +84,7 @@ const frontend = await build.addJavaScriptApp()
   .withEnvironment("API_URI", await api.getEndpoint('http'))
 ```
 
-#### 开放外部端口
+### 开放外部端口
 
 使用`.withHttpEndpoint`开放一个外部端口，使用这个方法会增加名为`http`的endpoint，用于外部访问，比如我们的前端服务，后端服务都需要一个外部端口来进行访问。下面是一个示例：
 
