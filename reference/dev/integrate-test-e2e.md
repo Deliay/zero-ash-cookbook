@@ -26,11 +26,13 @@ tests/e2e/package.json
 
 ## 编写 e2e test
 
-加载`contract/`目录下的相关contract与`proposal`内容和`<产品文档>`，覆盖所有可能的页面场景和产品验收点。禁止对照`servers/`里的实现来写case，避免出现射箭画靶的情况。
+delegate `@general` subagent to write e2e test，工作目录是`worktree`，要求加载`contract/`目录下的相关contract与`proposal`内容和`<产品文档>`，覆盖所有可能的页面场景和产品验收点。禁止对照`servers/`里的实现来写case，避免出现射箭画靶的情况。
 
 e2e test之后提一个`pull request`让用户进行review，`pull request`的`description`写出你的case列表，review通过之后开始运行 e2e test
 
 ## 运行 e2e test
+
+delegate `@general` subagent to run the e2e test
 
 使用 `aspire`(SKILL: aspire and [[infra-orchestrator.md]]) 拉起所有服务，并根据`tests/e2e`的技术栈运行测试。
 

@@ -27,11 +27,13 @@ tests/api/package.json
 
 ## 编写 API test
 
-使用`@general`subagent进行编写，工作目录是`worktree`，要求 加载`contract/`目录下的相关contract与`proposal`内容，覆盖所有可能的case。禁止对照`servers/`里的实现来写case，避免出现射箭画靶的情况。
+delegate `@general` subagent to write api test，工作目录是`worktree`，要求 加载`contract/`目录下的相关contract与`proposal`内容，覆盖所有可能的case。禁止对照`servers/`里的实现来写case，避免出现射箭画靶的情况。
 
 写完API test之后提一个`pull request`让用户进行review，`pull request`的`description`写出你的case列表，review通过之后开始运行 api test
 
 ## 运行 API test
+
+delegate `@general` subagent to run api test
 
 使用 `aspire`(SKILL: aspire and [[infra-orchestrator.md]]) 拉起所有服务，并根据`tests/api`的技术栈运行测试。
 
