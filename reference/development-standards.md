@@ -43,5 +43,15 @@ REFERENCE: [[dev/write-implementation.md]]
 
 ### 编排服务
 
-USE FOR: service orchestration, update infra, infurstructure
+USE FOR: service orchestration, update infra, infurstructure, aspire, run services, start services, docker, compose
 REFERENCE: [[dev/infra-orchestrator.md]]
+
+## 编写集成 API test
+
+USE FOR: integrate test for api service, api test
+REFERENCE: [[dev/integrate-test-api.md]]
+
+## 编写集成 e2e test
+
+USE FOR: integrate test for frontend
+REFERENCE: [[dev/integrate-test-e2e.md]]
