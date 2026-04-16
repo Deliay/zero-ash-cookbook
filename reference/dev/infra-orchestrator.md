@@ -2,9 +2,17 @@
 
 我们在`infra/`文件夹下进行项目的编排，使用`aspire`及其`skill`。
 
+## 初始化aspire skill
+
+如果用户环境没有安装aspire，则提示去 [aspire 官网](https://aspire.dev/)下载安装，中止agent流程，如果用户显式证明不用 aspire进行编排，则跳过编排流程。
+
+如果用户环境安装了aspire，则引用 [[ref/aspire-skill.md]] 的知识进行后续操作。
+
 ## 初始化编排环境
 
-在执行到编排环节时，编排服务需要使用[[git.md]]的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`infra`。如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下，执行`aspire init --language typescript`进行新建项目。
+在执行到编排环节时，编排服务需要使用[[git.md]]的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`infra`。如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下
+
+如果还没有`local-dev`的aspire项目，则新建项目，执行 `aspire init --language typescript` 进行新建项目。
 
 如何维护使用TypeScript语言的Aspire项目可以使用`aspire docs get typescript-apphost-project-structure`命令获取帮助。
 
@@ -16,7 +24,9 @@
 
 ## 完成编排
 
-在编排完成后，提`pull request`要求用户review，直到用户显式说明review通过，或者pull request状态已经是merge了，再进行下一个步骤。
+在编排完成后，使用 `aspire stop` + `aspire restore` + `aspire start` + `aspire describe`启动 aspire 并检查各个服务都应该启动成功。
+
+然后提`pull request`要求用户review，直到用户显式说明review通过，或者pull request状态已经是merge了，再进行下一个步骤。
 
 ## 依赖的中间件设施
 
@@ -50,7 +60,7 @@ const backend = await builder
 
 #### 环境变量注入
 
-我们可以通过`.withEnvironment()`注入环境变量，可以从其他的resource中获取对应的endpoint，示例如下：
+我们可以通过`.withEnvironment()`注入环境变量，可以从其他的resource中获取对应的endpoint，注意 api.getEndpoint这个API需要await，示例如下：
 
 ```typescript
 const mongo = await builder.addMongoDB();
