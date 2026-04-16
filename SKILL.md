@@ -5,6 +5,9 @@ description: 'USE FOR: project management, create project, development, write co
 
 # ZeroAsh Development Skill
 
+## Language Rule
+Always respond in the same language the user uses for communication. If the user writes in Chinese, respond in Chinese. If the user writes in English, respond in English.
+
 ## Create Project
 USE FOR: Create Project.
 DO NOT USE FOR: The exists project.
