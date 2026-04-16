@@ -1,6 +1,6 @@
 ---
 name: zero-ash-cookbook
-description: USE FOR: project manage, create project, read project, development, write code, read code, write documents, update documents, write test, implement product.
+description: 'USE FOR: project manage, create project, read project, development, write code, read code, write documents, update documents, write test, implement product.'
 ---
 
 # ZeroAsh Development Skill
