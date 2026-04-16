@@ -20,6 +20,6 @@ USE FOR: write product documents, write product solution.
 REFERENCE: [[reference/product-document-standards.md]]
 
 ### Development Standards
-USE FOR: write code, implement product, write tech proposal, write tech solution, write implement plan, write tech document. write test, wirte e2e test, write api test, run test, run api test
+USE FOR: write code, implement product, write tech proposal, write tech solution, write implement plan, write tech document. write test, wirte e2e test, write api test, run test, run api test, run service, run server.
 DO NOT USE FOR: write product documents, write product solution.
 REFERENCE: [[reference/development-standards.md]]
