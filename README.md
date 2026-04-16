@@ -16,8 +16,9 @@
 ├── SKILL.md              # 技能主入口
 └── reference/
     ├── create-project.md        # 项目创建流程
-    ├── document-workflow.md    # 文档规范
-    ├── development-workflow.md # 开发工作流程
+    ├── debug-workflow.md        # 调试工作流程
+    ├── document-workflow.md     # 文档规范
+    ├── development-workflow.md  # 开发工作流程
     ├── git.md                   # Git 规范
     ├── mono-repo-project-structure.md
     ├── product-document-workflow.md
@@ -25,6 +26,8 @@
     ├── dev/
     │   ├── dev-proposal-template.md
     │   ├── infra-orchestrator.md
+    │   ├── integrate-test-api.md    # API 集成测试
+    │   ├── integrate-test-e2e.md    # E2E 集成测试
     │   ├── update-contract.md
     │   ├── write-implementation.md
     │   └── write-proposal.md

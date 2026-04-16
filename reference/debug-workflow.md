@@ -19,11 +19,9 @@
 
 ## 环境准备
 
-delegate `@general` subagent to prepare environment
+使用 `@general` subagent 来准备环境：使用[[git.md]]进行分支管理，每次进行调查根据当前分支创建新的`worktree`，`<type>`为`issues`，`<slug>`为上面核实问题的简写。在这个新的`worktree`进行后续操作
 
-使用[[git.md]]进行分支管理，每次进行调查根据当前分支创建新的`worktree`，`<type>`为`issues`，`<slug>`为上面核实问题的简写。在这个新的`worktree`进行后续操作
-
-在这个`worktree`使用[[dev/ref/aspire.md]] aspire来启动服务，准备完成后进入到下一个步骤
+在这个`worktree`使用[[dev/ref/aspire-skill.md]] `aspire` 来启动相关的服务，准备完成后进入到下一个步骤
 
 ## 复现问题
 
@@ -31,7 +29,5 @@ delegate `@general` subagent to prepare environment
 
 ## 修复问题
 
-delegate `@general` subagent to fix the issues
-
-修复在`worktree`进行，修复完成后，提`pull request`让用户进行review。
+使用 `@general` subagent 来进行修复：修复在`worktree`进行，修复完成后，提`pull request`让用户进行review。
 修复时，需要编写e2e test或api test放置之后再出现类似的问题。
