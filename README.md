@@ -16,11 +16,11 @@
 ├── SKILL.md              # 技能主入口
 └── reference/
     ├── create-project.md        # 项目创建流程
-    ├── document-standards.md    # 文档规范
-    ├── development-standards.md # 开发工作流程
+    ├── document-workflow.md    # 文档规范
+    ├── development-workflow.md # 开发工作流程
     ├── git.md                   # Git 规范
     ├── mono-repo-project-structure.md
-    ├── product-document-standards.md
+    ├── product-document-workflow.md
     ├── project-structure.md
     ├── dev/
     │   ├── dev-proposal-template.md
@@ -50,14 +50,14 @@ REFERENCE: reference/create-project.md
 ```
 USE FOR: write any documents, Update documents.
 DO NOT USE FOR: write code, code implementions.
-REFERENCE: reference/document-standards.md
+REFERENCE: reference/document-workflow.md
 ```
 
 ### 编写产品文档
 
 ```
 USE FOR: write product documents, write product solution.
-REFERENCE: reference/product-document-standards.md
+REFERENCE: reference/product-document-workflow.md
 ```
 
 ### 开发
@@ -65,7 +65,7 @@ REFERENCE: reference/product-document-standards.md
 ```
 USE FOR: write code, implement product, write tech proposal, write tech solution, write implement plan, write tech document.
 DO NOT USE FOR: write product documents, write product solution.
-REFERENCE: reference/development-standards.md
+REFERENCE: reference/development-workflow.md
 ```
 
 ## 开发流程

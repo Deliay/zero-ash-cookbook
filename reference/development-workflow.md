@@ -1,4 +1,4 @@
-# Development Standards
+# Development workflow
 
 你需要严格按照契约式来进行开发，例如 `openapi-spec`, `graphql-schema` 放置在 `contract/` 中。
 
