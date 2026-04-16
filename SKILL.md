@@ -1,5 +1,5 @@
 ---
-name: zero-ash-dev-skills
+name: zero-ash-cookbook
 description: USE FOR: project manage, create project, read project, development, write code, read code, write documents, update documents, write test, implement product.
 ---
 
