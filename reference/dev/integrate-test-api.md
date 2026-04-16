@@ -33,7 +33,7 @@ tests/api/package.json
 
 ## 运行 API test
 
-使用 `aspire`(SKILL: aspire) 拉起所有服务，并根据`tests/api`的技术栈运行测试。
+使用 `aspire`(SKILL: aspire and [[infra-orchestrator.md]]) 拉起所有服务，并根据`tests/api`的技术栈运行测试。
 
 启动的目标后端endpoint可以通过`aspire describe <service-slug>`获取，如`aspire describe api-a`即可拿到endpoint，这里推荐通过环境变量将endpoint注入给测试项目。
 
