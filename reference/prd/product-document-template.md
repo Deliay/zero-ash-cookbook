@@ -1,91 +1,90 @@
-# <需求名称>
+# <Requirement Name>
 
-**功能名称**: [功能名称]
-**PRD 版本**: v1.0
-**创建日期**: [YYYY-MM-DD]
-**作者**: [作者名称]
+**Feature Name**: [Feature Name]
+**PRD Version**: v1.0
+**Creation Date**: [YYYY-MM-DD]
+**Author**: [Author Name]
 
-## 背景与目标
+## Background and Goals
 
-### 1.1 背景
-[描述为什么会产生这个需求，问题的来源是什么]
+### 1.1 Background
+[Describe why this requirement exists and the source of the problem]
 
-### 1.2 目标
-[明确要达成的目标，应该用可验证的指标描述]
+### 1.2 Goals
+[Clearly define goals to be achieved; describe with verifiable metrics]
 
-### 1.3 成功标准
-[如何判断功能上线后是否成功，应该有可量化的指标]
+### 1.3 Success Criteria
+[How to determine if the feature was successful after launch; should have quantifiable metrics]
 
-## 用户分析
+## User Analysis
 
-### 2.1 目标用户
-[功能面向的主要用户群体]
+### 2.1 Target Users
+[Primary user groups for this feature]
 
-### 2.2 用户场景
-[描述用户在什么情况下会使用这个功能]
+### 2.2 User Scenarios
+[Describe under what circumstances users will use this feature]
 
-| 场景 | 用户角色 | 目标 | 痛点 |
-|--|--|--|--|
-|  |  |  |  |
+| Scenario | User Role | Goal | Pain Point |
+|----------|-----------|------|------------|
+| | | | |
 
-## 功能需求
+## Functional Requirements
 
-### 3.1 功能概述
-[用一两句话概括这个功能是做什么的]
+### 3.1 Feature Overview
+[Describe what this feature does in one or two sentences]
 
-### 3.2 功能列表
+### 3.2 Feature List
 
-#### 功能点 1: [名称]
-- **描述**: [详细描述这个功能点做什么]
-- **用户价值**: [为什么用户需要这个功能]
-- **验收标准**: [功能完成后如何验证]
+#### Feature 1: [Name]
+- **Description**: [Detailed description of what this feature does]
+- **User Value**: [Why users need this feature]
+- **Acceptance Criteria**: [How to verify after completion]
   - [ ]
   - [ ]
 
-#### 功能点 2: [名称]
-- **描述**: [详细描述这个功能点做什么]
-- **用户价值**: [为什么用户需要这个功能]
-- **验收标准**: [功能完成后如何验证]
+#### Feature 2: [Name]
+- **Description**: [Detailed description of what this feature does]
+- **User Value**: [Why users need this feature]
+- **Acceptance Criteria**: [How to verify after completion]
   - [ ]
   - [ ]
 
-### 3.3 用户操作流程
-[用户操作流程图，用mermaid图形或文字描述关键步骤]
+### 3.3 User Operation Flow
+[User operation flow diagram; use mermaid diagrams or text to describe key steps]
 
+### 3.4 Page/Interface Description
 
-### 3.4 页面/界面描述
+| Page | Description | Key Elements |
+|------|-------------|--------------|
+|      |             |              |
 
-| 页面 | 描述 | 关键元素 |
-|------|------|---------|
-|      |      |         |
+### 3.5 Edge Cases and Boundary Conditions
 
-### 3.5 异常与边界情况
+| Condition | Expected Behavior |
+|-----------|-------------------|
+|           |                   |
 
-| 情况 | 预期行为 |
-|------|---------|
-|      |         |
+## Non-Functional Requirements
 
-## 四、非功能需求
+### 4.1 Performance Requirements
+[Specify if there are performance requirements]
 
-### 4.1 性能要求
-[如有性能要求，在此说明]
+### 4.2 Security Requirements
+[Specify if there are security requirements]
 
-### 4.2 安全性要求
-[如有安全要求，在此说明]
+### 4.3 Compatibility Requirements
+[Specify if there are compatibility requirements]
 
-### 4.3 兼容性要求
-[如有兼容性要求，在此说明]
+## Dependencies and Constraints
 
-## 五、依赖与约束
+### 5.1 Dependencies
+[Other systems or modules that this feature depends on]
 
-### 5.1 依赖
-[功能开发所依赖的其他系统或模块]
+### 5.2 Constraints
+[Constraints that must be followed during development]
 
-### 5.2 约束
-[开发过程中需要遵守的限制条件]
+## Related Documents
 
-## 六、相关文档
-
-- [相关PRD链接]
-- [相关契约链接]
-- [其他参考资料]
+- [Related PRD Link]
+- [Related Contract Link]
+- [Other Reference Materials]

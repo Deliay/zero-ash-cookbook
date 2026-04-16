@@ -1,7 +1,7 @@
-# 更新Contract
+# Update Contract
 
-读取 `<产品文档>`,  `docs/engineering/frontend-rules.md`, `docs/engineering/backend-rules.md`和 `contract/`目录下的结构。
+Read the `<product document>`, `docs/engineering/frontend-rules.md`, `docs/engineering/backend-rules.md`, and structure under the `contract/` directory.
 
-使用[[git.md]]规范，分支前缀的`<type>`使用`contract`，分支基于`<feat-branch>`（可在`proposal`中找到这个branch），在上生成对应的 contract schema。并提交，如果有`pull request`的工具，则提起`pull request`让用户审批。此时中断Agent循环，让用户输入是否审批完成。
+Following [[git.md]] conventions, use `contract` as the branch prefix `<type>`. Generate the corresponding contract schema on `<feat-branch>` (found in `proposal`). Commit and, if the `pull request` tool is available, submit a pull request for user approval. At this point, break the Agent loop and wait for user input on whether approval is complete.
 
-如果用户显示告知review通过，则操作这个`pull request`合并到`<feat-branch>`
+If the user explicitly states the review passed, merge this `pull request` into `<feat-branch>`.

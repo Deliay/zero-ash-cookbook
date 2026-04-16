@@ -1,68 +1,68 @@
-# <需求名称> - 技术提案
+# <Requirement Name> - Technical Proposal
 
-**功能名称**: [功能名称]
-**关联 PRD**: [PRD 文件名]
-**技术提案版本**: v1.0
-**创建日期**: [YYYY-MM-DD]
-**作者**: [作者名称]
-**feat-branch**: `feat/<slug>` 参考[[../git.md]]
+**Feature Name**: [Feature Name]
+**Associated PRD**: [PRD File Name]
+**Technical Proposal Version**: v1.0
+**Creation Date**: [YYYY-MM-DD]
+**Author**: [Author Name]
+**feat-branch**: `feat/<slug>` Reference [[../git.md]]
 
-## 1. 概述
+## 1. Overview
 
-### 1.1 背景
+### 1.1 Background
 
-[描述此技术提案的来源，与 PRD 的关系]
+[Describe the origin of this technical proposal and its relationship with the PRD]
 
-### 1.2 目标
+### 1.2 Goals
 
-[技术层面要达成的目标]
+[Goals to be achieved at the technical level]
 
-### 1.3 范围
+### 1.3 Scope
 
-[此提案涉及的技术范围，哪些做哪些不做]
+[Technical scope covered by this proposal; what is and isn't included]
 
-## 2. 技术架构
+## 2. Technical Architecture
 
-### 2.1 系统架构图
+### 2.1 System Architecture Diagram
 
 ```mermaid
 graph TD
-    A[前端应用] --> B[API 网关]
-    B --> C[后端服务]
-    C --> D[(数据库)]
-    C --> E[缓存服务]
+    A[Frontend App] --> B[API Gateway]
+    B --> C[Backend Service]
+    C --> D[(Database)]
+    C --> E[Cache Service]
 ```
 
-### 2.2 技术栈
+### 2.2 Tech Stack
 
-| 层级 | 技术选型 | 说明 |
-|------|---------|------|
-| 前端 | | |
-| 后端 | | |
-| 数据库 | | |
-| 缓存 | | |
-| 其他 | | |
+| Layer | Technology Choice | Description |
+|------|------------------|-------------|
+| Frontend | | |
+| Backend | | |
+| Database | | |
+| Cache | | |
+| Others | | |
 
-### 2.3 模块划分
+### 2.3 Module Division
 
 ```mermaid
 graph LR
-    A[模块 A] --> B[模块 B]
-    B --> C[模块 C]
+    A[Module A] --> B[Module B]
+    B --> C[Module C]
 ```
 
-| 模块 | 职责 | 关键技术点 |
-|------|------|-----------|
+| Module | Responsibility | Key Technical Points |
+|--------|----------------|----------------------|
 
-## 3. API 设计
+## 3. API Design
 
-### 3.1 API 契约
+### 3.1 API Contract
 
-[描述对外暴露的 API 接口]
+[Describe externally exposed API interfaces]
 
-#### 接口 1: [接口名称]
+#### Interface 1: [Interface Name]
 
-- **请求**
+- **Request**
   - Method: GET/POST/PUT/DELETE
   - Path: /api/v1/...
   - Body: 
@@ -71,7 +71,7 @@ graph LR
     }
     ```
 
-- **响应**
+- **Response**
   - Status: 200/400/404/500
   - Body:
     ```json
@@ -79,106 +79,107 @@ graph LR
     }
     ```
 
-### 3.2 内部接口
+### 3.2 Internal Interfaces
 
-[模块间调用的内部接口]
+[Internal interfaces for inter-module communication]
 
-## 4. 数据模型
+## 4. Data Model
 
-### 4.1 数据库设计
+### 4.1 Database Design
 
-#### 表/集合: [名称]
+#### Table/Collection: [Name]
 
-| 字段 | 类型 | 说明 |
-|------|------|------|
+| Field | Type | Description |
+|-------|------|-------------|
 | | | |
 
-### 4.2 缓存设计
+### 4.2 Cache Design
 
-[缓存策略，key 命名规范，TTL]
+[Cache strategy, key naming convention, TTL]
 
-## 5. 技术实现方案
+## 5. Technical Implementation Plan
 
-### 5.1 核心流程
+### 5.1 Core Flow
 
 ```mermaid
 sequenceDiagram
-    participant U as 用户
-    participant F as 前端
-    participant B as 后端
-    participant D as 数据库
+    participant U as User
+    participant F as Frontend
+    participant B as Backend
+    participant D as Database
 
-    U->>F: 操作
-    F->>B: API 请求
-    B->>D: 查询/写入
-    D-->>B: 结果
-    B-->>F: 响应
-    F-->>U: 展示
+    U->>F: Operation
+    F->>B: API Request
+    B->>D: Query/Write
+    D-->>B: Result
+    B-->>F: Response
+    F-->>U: Display
 ```
 
-### 5.2 关键实现点
+### 5.2 Key Implementation Points
 
-#### 实现点 1: [名称]
+#### Point 1: [Name]
 
-- **描述**: [详细描述]
-- **技术细节**: 
-- **风险点**: [如有]
+- **Description**: [Detailed description]
+- **Technical Details**: 
+- **Risk Points**: [If any]
 
-## 6. 技术决策
+## 6. Technical Decisions
 
-### 6.1 决策列表
+### 6.1 Decision List
 
-| 决策 | 选项 A | 选项 B | 最终选择 | 原因 |
-|------|--------|--------|---------|------|
+| Decision | Option A | Option B | Final Choice | Reason |
+|----------|----------|----------|--------------|--------|
+| | | | | |
 
-### 6.2 依赖与约束
+### 6.2 Dependencies and Constraints
 
-| 类型 | 内容 | 说明 |
-|------|------|------|
-| 依赖 | | |
-| 约束 | | |
+| Type | Content | Description |
+|------|---------|-------------|
+| Dependencies | | |
+| Constraints | | |
 
-## 7. 项目结构
+## 7. Project Structure
 
 ```
-[根据技术栈展示项目目录结构]
+[Show project directory structure based on tech stack]
 ```
 
-## 8. 测试策略
+## 8. Testing Strategy
 
-### 8.1 测试覆盖要求
+### 8.1 Test Coverage Requirements
 
-- 单元测试覆盖率: >= [X]%
-- API 测试覆盖的端点: [列表]
+- Unit test coverage: >= [X]%
+- API test covered endpoints: [List]
 
-### 8.2 测试类型
+### 8.2 Test Types
 
-| 类型 | 工具 | 覆盖范围 |
-|------|------|---------|
+| Type | Tools | Coverage Scope |
+|------|-------|----------------|
 
-## 9. 部署方案
+## 9. Deployment Plan
 
-### 9.1 环境规划
+### 9.1 Environment Planning
 
-| 环境 | 用途 | 部署方式 |
-|------|------|---------|
+| Environment | Purpose | Deployment Method |
+|------------|---------|------------------|
 
-### 9.2 配置管理
+### 9.2 Configuration Management
 
-[配置项说明]
+[Configuration items description]
 
-## 10. 验收标准
+## 10. Acceptance Criteria
 
-- [ ] 技术方案评审通过
-- [ ] Contract 评审通过
-- [ ] 代码实现完成
-- [ ] 单元测试覆盖达标
-- [ ] API 测试通过
-- [ ] E2E 测试通过
+- [ ] Technical proposal review passed
+- [ ] Contract review passed
+- [ ] Code implementation completed
+- [ ] Unit test coverage met
+- [ ] API tests passed
+- [ ] E2E tests passed
 
-## 11. 相关文档
+## 11. Related Documents
 
-- [关联 PRD]
-- [关联 Contract]
-- [开发规范]
-- [其他参考资料]
+- [Associated PRD]
+- [Associated Contract]
+- [Development Standards]
+- [Other Reference Materials]

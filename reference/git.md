@@ -1,35 +1,34 @@
-# Git操作规范
+# Git Operation Standards
 
-## 禁止change base
+## Prohibition on Change Base
 
-禁止使用rebase / squash 等操作，只允许merge
+Rebase / squash operations are **prohibited**. Only merge operations are allowed.
 
-## 分支不要复用
+## Branch Reuse Prohibited
 
-在没有显式标记当前会话主题结束之前，如果工作区非clean状态，则提示当前工作区不干净。举例来说，用户在开发了需求A后，没有提交，还有需求A的改动，此时要求开发需求B，你应该中断Agent循环，并提示工作区不干净。
+Before explicitly marking the current session topic as complete, if the working area is not in a clean state, prompt that the working area is dirty. For example, if the user has developed feature A but hasn't committed, and still has changes for feature A, but now needs to develop feature B, you should break the Agent loop and indicate the working area is dirty.
 
-## 工作在 worktree 上
+## Work on Worktrees
 
-每次在确定当前工作主题后，即将进行`write`或`edit`时，主动使用`git fetch`和`git worktree`功能基于最新的主分支创建新的worktree。如果显式指定目标分支，则用指定的目标分支，否则用仓库的默认分支（如main/master）
+After confirming the current work topic and before performing any `write` or `edit` operations, proactively use `git fetch` and `git worktree` to create a new worktree based on the latest main branch. If a target branch is explicitly specified, use that; otherwise, use the repository's default branch (e.g., main/master).
 
-`worktree`的目录为项目根目录的`.worktree`文件夹，例如有一个`prd/add-new-feature-this-is-name`的分支，则对应的检出目录为 `.worktree/prd/add-new-feature-this-is-name`。
+The `worktree` directory is in the `.worktree` folder at the project root. For example, a branch named `prd/add-new-feature-this-is-name` would have its checkout directory at `.worktree/prd/add-new-feature-this-is-name`.
 
-在进行一定改动后，你会在worktree上进行commit，改动的量尽量是单元任务就进行commit
+After making some changes, you will commit in the worktree. Changes should be committed as atomic units of work when possible.
 
-在完成工作后，需要销毁对应的worktree，在上面的例子中，对应应该销毁的检出目录为`.worktree/prd/add-new-feature-this-is-name`。
+After completing work, destroy the corresponding worktree. In the example above, the directory to be removed would be `.worktree/prd/add-new-feature-this-is-name`.
 
-## 分支命名规范
+## Branch Naming Convention
 
-分支命名为：`<type>/<slug>`
+Branch name format: `<type>/<slug>`
 
-其中`<type>`为
+Where `<type>` can be:
+- prd: Product document branch
+- feat: Feature development branch
+- Other externally specified types
 
-- prd: 产品文档分支
-- feat: 需求开发分支
-- 外部指定的其他type
+`<slug>` is the branch slug determined from context.
 
-`<slug>`为上下文中确定的分支slug
+## Pull Request Standards
 
-## Pull Request规范
-
-在合并pull request后，需要删除远端和本地的分支，注意**不要**删除目标分支。
+After merging a pull request, delete both remote and local branches. Note: **Do NOT** delete the target branch.

@@ -1,9 +1,9 @@
-# 修改产品文档
+# Edit Product Document
 
-当用户想修改draft的产品文档时，你需要要求用户提供pull request的序号，你使用`pull request`相关的工具读取对应的分支，并使用 `git worktree`进行checkout。
+When a user wants to edit a draft product document, request the pull request number from the user. Use `pull request` tools to read the corresponding branch and use `git worktree` to checkout.
 
-如果`pull request`中有review的comment，或者是inline的comment，你需要分析这些comment是否已经被修复过了，如果还没有修复则进行修复。你也可以就修改的问题与用户交流。
+If the `pull request` has review comments or inline comments, analyze whether these comments have been addressed. If not yet fixed, proceed with fixing them. You may also discuss the issues with the user.
 
-上述操作完成后中断agent循环，如果没有review comment，则提示用户你已准备好修改产品文档，询问用户哪些地方需要修改。如果有review comment，完成后再次询问用户是否还有修改。
+After completing the above operations, break the Agent loop. If there are no review comments, prompt the user that you are ready to edit the product document and ask what needs to be modified. If there are review comments, ask the user again if there are further modifications after completing them.
 
-如果没有则`commit and push your changes`，完成后，并将`git worktree`删除。
+If not, `commit and push your changes`. After completion, delete the `git worktree`.

@@ -1,6 +1,6 @@
 ---
 name: zero-ash-cookbook
-description: 'USE FOR: project manage, create project, read project, development, write code, read code, write documents, update documents, api test, e2e test, implement product, debug, fix issue, troubleshooting. 项目管理，创建项目，读取项目，开发，写代码，读取代码，写文档，写测试，更新测试，实现产品逻辑，写技术方案，解决问题，修BUG'
+description: 'USE FOR: project management, create project, development, write code, write documents, update documents, API test, E2E test, implement product, debug, fix issue, troubleshooting. DO NOT USE FOR: reading existing code, reading existing documents, understanding project structure.'
 ---
 
 # ZeroAsh Development Skill

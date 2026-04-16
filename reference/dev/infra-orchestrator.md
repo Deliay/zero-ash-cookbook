@@ -1,68 +1,68 @@
-# 编排服务
+# Service Orchestration
 
-我们在`infra/`文件夹下进行项目的编排，使用`aspire`及其`skill`。
+Project orchestration is performed in the `infra/` directory using `aspire` and its `skill`.
 
-## 初始化aspire skill
+## Initialize Aspire Skill
 
-如果用户环境没有安装aspire，则提示去 [aspire 官网](https://aspire.dev/)下载安装，中止agent流程，如果用户显式证明不用 aspire进行编排，则跳过编排流程。
+If aspire is not installed in the user's environment, prompt the user to download and install from the [aspire official website](https://aspire.dev/) and abort the Agent workflow. If the user explicitly states that aspire is not needed for orchestration, skip the orchestration process.
 
-如果用户环境安装了aspire，则引用 [[ref/aspire-skill.md]] 的知识进行后续操作。
+If aspire is installed, proceed with operations using knowledge from [[ref/aspire-skill.md]].
 
-## 初始化编排环境
+## Initialize Orchestration Environment
 
-在执行到编排环节时，编排服务需要使用[[git.md]]的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`infra`。如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下
+When reaching the orchestration stage, services need to use [[git.md]] capabilities to create a `worktree` based on `<dev-branch>`, with `<type>` set to `infra`. If no `infra/local-dev` directory exists, create an `aspire` project for local development orchestration in the `infra/local-dev` directory by default.
 
-如果还没有`local-dev`的aspire项目，则新建项目，执行 `aspire init --language typescript` 进行新建项目。
+If `local-dev` aspire project doesn't exist yet, create it by running `aspire init --language typescript`.
 
-如何维护使用TypeScript语言的Aspire项目可以使用`aspire docs get typescript-apphost-project-structure`命令获取帮助。
+For guidance on maintaining a TypeScript Aspire project, use the command `aspire docs get typescript-apphost-project-structure`.
 
-如果已经有了`infra/local-dev`目录，则无需初始化环境。
+If `infra/local-dev` directory already exists, no environment initialization is needed.
 
-## 分析项目可能的依赖
+## Analyze Project Dependencies
 
-搜索技术方案`<proposal>`, 开发分支中的项目引用的包，找到可能的环境变量，并分析出项目之间的依赖关系。如果依赖关系有变化则进行修改，没有则跳过本步骤。
+Search technical proposals (`<proposal>`) and packages referenced in development branch projects to find possible environment variables and analyze dependencies between projects. Modify if there are changes in dependencies; otherwise, skip this step.
 
-## 完成编排
+## Complete Orchestration
 
-在编排完成后，在`local-dev`文件夹使用`npm run aspire:build`和`npm run aspire:lint`来检查改动是否正确。
+After orchestration is complete, run `npm run aspire:build` and `npm run aspire:lint` in the `local-dev` folder to verify the changes are correct.
 
-使用 `aspire stop` + `aspire restore` + `aspire start` + `aspire describe`启动 aspire 并检查各个服务都应该启动成功。
+Use `aspire stop` + `aspire restore` + `aspire start` + `aspire describe` to start aspire and verify all services started successfully.
 
-然后提`pull request`要求用户review，直到用户显式说明review通过，或者pull request状态已经是merge了，再进行下一个步骤。
+Then submit a `pull request` for user review. Proceed to the next step only after the user explicitly approves the review or the pull request status is already merged.
 
-## 依赖的中间件设施
+## Middleware Infrastructure Dependencies
 
-使用`SKILL: aspire`来编排中间件设施，可以通过cli搜索对应的文档`aspire docs search <keyworkd>`，这里的keywor模板可以是 `get-started-with-the-<目标技术栈>-integration`，例如：
+Use `SKILL: aspire` to orchestrate middleware infrastructure. Search for corresponding documentation via CLI: `aspire docs search <keyword>`. The keyword template can be `get-started-with-the-<target-tech-stack>-integration`, for example:
 
 ```bash
 # Redis
 aspire docs search get-started-with-the-redis-integration
 
-# postgresql
+# PostgreSQL
 aspire docs search get-started-with-the-postgresql-integration
 ```
 
-## TypeScript / NodeJS 相关文档的搜索
+## TypeScript / NodeJS Documentation Search
 
-统一使用`javascript`的文档来进行替代: `aspire docs search javascript`
+Use the `javascript` documentation as a substitute: `aspire docs search javascript`
 
-## 编排技巧
+## Orchestration Tips
 
-### 指定服务镜像Tag
+### Specify Service Image Tag
 
-使用 `.withImageTag(tag: string)`可以覆盖Docker Resource的tag
+Use `.withImageTag(tag: string)` to override Docker Resource tags.
 
-### JavaScript App集成
+### JavaScript App Integration
 
-使用 `addJavaScriptApp` API，第三个参数是 `{ runScriptName: "" }` 这样的对象，如果你想执行`dev` 这个脚本例如：
+Use the `addJavaScriptApp` API. The third parameter is an object like `{ runScriptName: "" }`. If you want to execute the `dev` script, for example:
 
 ```typescript
-  .addJavaScriptApp('service-name', 'project_relative_path', { runScriptName: 'dev' });
+.addJavaScriptApp('service-name', 'project_relative_path', { runScriptName: 'dev' });
 ```
 
-### 服务依赖设置
+### Service Dependency Setup
 
-分析后端服务分别对中间设置的依赖，使用如下pattern进行依赖，`withReference`是将对应资源的`parameter resource`注入到目标服务中，`waitFor`则是标记这个服务需要等到目标服务成功启动，health check完成后再进行启动。
+Analyze backend service dependencies on middleware and use the following pattern for dependencies. `withReference` injects the target resource's `parameter resource` into the target service, while `waitFor` marks that this service needs to wait for the target service to start successfully with health check completed before starting.
 
 ```typescript
 const redis = await builder.addRedis();
@@ -72,9 +72,9 @@ const backend = await builder
   .withReference(redis).waitFor(redis);
 ```
 
-### 环境变量注入
+### Environment Variable Injection
 
-我们可以通过`.withEnvironment()`注入环境变量，可以从其他的resource中获取对应的endpoint，注意 api.getEndpoint这个API需要await，示例如下：
+We can inject environment variables via `.withEnvironment()`. You can get the corresponding endpoint from other resources. Note that `api.getEndpoint` requires await. Example:
 
 ```typescript
 const mongo = await builder.addMongoDB();
@@ -86,22 +86,22 @@ const frontend = await build.addJavaScriptApp()
   .withEnvironment("API_URI", await api.getEndpoint('http'))
 ```
 
-### 开放外部端口
+### Expose External Ports
 
-使用`.withHttpEndpoint`开放一个外部端口，使用这个方法会增加名为`http`的endpoint，用于外部访问，比如我们的前端服务，后端服务都需要一个外部端口来进行访问。下面是一个示例：
+Use `.withHttpEndpoint` to expose an external port. This method adds an endpoint named `http` for external access. Both frontend and backend services need an external port for access. Example:
 
 ```typescript
 const api = await builder.addJavaScriptApp()
-  .withHttpEndpoint({ env: 'PORT' }); // 使用 env将端口号注入到环境变量
+  .withHttpEndpoint({ env: 'PORT' }); // Use env to inject port number into environment variable
 
 const frontend = await build.addJavaScriptApp()
   .withReference(backend)
   .withEnvironment("API_URI", await api.getEndpoint('http'))
 ```
 
-### lint提示找不到tsconfig.json
+### Lint Cannot Find tsconfig.json
 
-创建一个tsconfig.json，引用aspire的apphost tsconfig即可：
+Create a tsconfig.json that references aspire's apphost tsconfig:
 
 ```json
 {
