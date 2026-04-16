@@ -4,7 +4,7 @@
 
 ## 初始化编排环境
 
-在执行到编排环节时，如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下，执行`aspire init --language typescript`进行新建项目。
+在执行到编排环节时，编排服务需要使用[[git.md]]的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`infra`。如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下，执行`aspire init --language typescript`进行新建项目。
 
 如何维护使用TypeScript语言的Aspire项目可以使用`aspire docs get typescript-apphost-project-structure`命令获取帮助。
 
@@ -14,7 +14,11 @@
 
 搜索技术方案`<proposal>`, 开发分支中的项目引用的包，找到可能的环境变量，并分析出项目之间的依赖关系。如果依赖关系有变化则进行修改，没有则跳过本步骤。
 
-### 依赖的中间件设施
+## 完成编排
+
+在编排完成后，提`pull request`要求用户review，直到用户显式说明review通过，或者pull request状态已经是merge了，再进行下一个步骤。
+
+## 依赖的中间件设施
 
 使用`SKILL: aspire`来编排中间件设施，可以通过cli搜索对应的文档`aspire docs search <keyworkd>`，这里的keywor模板可以是 `get-started-with-the-<目标技术栈>-integration`，例如：
 
@@ -26,11 +30,11 @@ aspire docs search get-started-with-the-redis-integration
 aspire docs search get-started-with-the-postgresql-integration
 ```
 
-### TypeScript / NodeJS 相关文档的搜索
+## TypeScript / NodeJS 相关文档的搜索
 
 统一使用`javascript`的文档来进行替代: `aspire docs search javascript`
 
-### 编排技巧
+## 编排技巧
 
 #### 服务依赖设置
 
