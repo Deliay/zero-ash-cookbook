@@ -24,7 +24,9 @@
 
 ## 完成编排
 
-在编排完成后，使用 `aspire stop` + `aspire restore` + `aspire start` + `aspire describe`启动 aspire 并检查各个服务都应该启动成功。
+在编排完成后，在`local-dev`文件夹使用`npm run aspire:build`和`npm run aspire:lint`来检查改动是否正确。
+
+使用 `aspire stop` + `aspire restore` + `aspire start` + `aspire describe`启动 aspire 并检查各个服务都应该启动成功。
 
 然后提`pull request`要求用户review，直到用户显式说明review通过，或者pull request状态已经是merge了，再进行下一个步骤。
 
@@ -95,4 +97,14 @@ const api = await builder.addJavaScriptApp()
 const frontend = await build.addJavaScriptApp()
   .withReference(backend)
   .withEnvironment("API_URI", await api.getEndpoint('http'))
+```
+
+### lint提示找不到tsconfig.json
+
+创建一个tsconfig.json，引用aspire的apphost tsconfig即可：
+
+```json
+{
+  "extends": ["tsconfig.apphost.json"]
+}
 ```
