@@ -7,6 +7,7 @@
 
 按照项目结构，单个`<子项目>`使用`@general` subagent，委托进行关于`proposals`文件的这个`<子项目>`部分的开发。提示词如下：
 ```
+需要使用[[git.md]]的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`<servers>`或者`<apps>`
 读取 `<产品文档>`，`contract/`目录下的结构和<proposal>文档，在`<子项目>`中实现这个需求，并覆盖单元测试直到通过。
 ```
 
