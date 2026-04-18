@@ -63,8 +63,6 @@ npx create-react-app --template typescript .
 
 Then install dependencies that were indicated in the prior selection process.
 
-During initialization, do not write any business logic code. Only set up the project structure, dependencies, and basic configuration files.
-
 After initialization, generate a brief tech stack description for the project in its `AGENTS.md`.
 
 Content includes:
@@ -77,11 +75,3 @@ Content includes:
 ```
 
 After each individual project is initialized, make one commit.
-
-## Service Orchestration
-
-After all projects are initialized, proceed with Service Orchestration in the `infra/` directory.
-
-Project orchestration is performed using `aspire` and its `skill`. REFERENCE: [[dev/infra-orchestrator.md]]
-
-The orchestration phase sets up middleware infrastructure dependencies and configures service-to-service communication, but does not involve business logic implementation.
