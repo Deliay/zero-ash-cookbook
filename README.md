@@ -28,8 +28,6 @@
     │   ├── infra-orchestrator.md
     │   ├── integrate-test-api.md    # API 集成测试
     │   ├── integrate-test-e2e.md    # E2E 集成测试
-    │   ├── ref/
-    │   │   └── aspire-skill.md
     │   ├── update-contract.md
     │   ├── write-implementation.md
     │   └── write-proposal.md

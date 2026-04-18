@@ -1,34 +1,33 @@
-# Debugging
+# 调试
 
-## Diagnostic Principles
+## 诊断原则
 
-1. Do not guess by reading code
-2. Reproduce the actual issue using e2e tests / API tests
+1. 不要看代码猜测
+2. 用e2e test/api test复现出实际问题
 
-## Debug Workflow
+## 调试工作流
 
-Use the `todo` tool to create the following items:
+使用`todo`工具新建如下`todo`
 
-Problem Verification -> Environment Setup -> Issue Reproduction -> Issue Fix
+问题核实 -> 环境准备 -> 复现问题 -> 修复问题
 
-## Problem Verification
+## 问题核实
 
-If context is incomplete or the user only provided partial information, proactively communicate with the user to gather missing context. Use the `ask` or `question` tool.
+在上下文不全的情况下，或者用户只抛出了一部分问题，则需要主动和用户沟通上下文信息。使用`ask`或者`question`工具。
 
-When the user explicitly states there is nothing more to add, proceed to the next step.
+在用户显式的说没有其他补充时，进入到下一个环节。
 
-## Environment Setup
+## 环境准备
 
-Use the `@general` subagent to set up the environment: use [[git.md]] for branch management. For each investigation, create a new `worktree` based on the current branch, with `<type>` set to `issues` and `<slug>` being a short name for the verified issue. Perform all subsequent operations in this new `worktree`.
+使用 `@general` subagent 来准备环境：使用[[git.md]]进行分支管理，每次进行调查根据当前分支创建新的`worktree`，`<type>`为`issues`，`<slug>`为上面核实问题的简写。在这个新的`worktree`进行后续操作
 
-In this `worktree`, use [[dev/ref/aspire-skill.md]] `aspire` to start the relevant services. Once ready, proceed to the next step.
+在这个`worktree`使用[[dev/ref/aspire-skill.md]] `aspire` 来启动相关的服务，准备完成后进入到下一个步骤
 
-## Issue Reproduction
+## 复现问题
 
-Based on the information gathered from the user, attempt to reproduce the issue using e2e or API tests. This may include screenshots, browser state inspection, and other investigative手段.
+按照和用户沟通的信息，使用e2e或者api测试尝试复现问题，包括但不限于可以截图查看浏览器状态等手段。
 
-## Issue Fix
+## 修复问题
 
-Use the `@general` subagent to fix the issue: fixes are made in the `worktree`. Once fixed, submit a `pull request` for user review.
-
-When fixing, write e2e tests or API tests to prevent similar issues from recurring.
+使用 `@general` subagent 来进行修复：修复在`worktree`进行，修复完成后，提`pull request`让用户进行review。
+修复时，需要编写e2e test或api test放置之后再出现类似的问题。

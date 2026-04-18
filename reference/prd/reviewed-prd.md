@@ -1,5 +1,5 @@
-# Product Document Review Approved
+# 产品文档审核通过
 
-If the user provides a `pull request` number, use the `git worktree` function to checkout the corresponding branch and make modifications in the worktree. If the user does not provide a `pull request` number but provides a `<document name>`, search for this `<document name>` in the `docs/product/draft` directory. If not found, prompt that no unreviewed product document was found and break the Agent execution.
+如果用户输入了一个`pull request`序号，则使用`git worktree`功能 checkout 对应的分支，在worktree上进行修改。如果用户没有给出`pull request`序号，而是给出一个<文档名称>，则在`docs/product/draft`目录下检索这个<文档名称>，如果没有则提示没有找到未审核的产品文档，并中断agent执行。
 
-If found, or checked out in the worktree, move the corresponding `<document name>` from `docs/product/draft` to `docs/product/reviewed`.
+如果找到了，或在worktree中检出了，则将对应<文档名称>从 `docs/product/draft` 移动到 `docs/product/reviewed`。

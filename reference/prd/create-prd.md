@@ -1,7 +1,7 @@
-# Create Product Document
+# 创建产品文档
 
-When creating a new product document, use `ask` and `question` tools to communicate product details with the user through a question-and-answer approach.
+创建新产品文档时，使用`ask`和`question`工具，用设问的模式和用户将产品细节沟通清楚。
 
-When outputting the file, use `git fetch` + `git worktree` to create a new working directory based on the main branch, named `prd/<requirement-slug>`. Place the new product document in `docs/product/draft`, commit and `push`.
+在你输出文件时，使用`git fetch` + `git worktree` 基于主分支创建新的工作区，名字为`prd/<需求slug>`，将新建的产品文档放置在`docs/product/draft`，提交commit并`push`
 
-If the environment has the `pull request` tool, use it to submit a pull request and display the link. Then delete this `git worktree`. After completing the above operations, request user review and provide the pull request link.
+如果环境有使用`pull request`工具，则使用该工具提`pull request`，并将连接提示出来，然后将这个`git worktree`删除。上述操作完成后要求用户review，并给出pull request链接。

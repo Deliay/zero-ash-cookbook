@@ -1,75 +1,77 @@
-# Document Standards
+# 文档规范
 
-Each document subdirectory is a complete, independent knowledge scope. Each folder manages all knowledge using the Zettelkasten method.
+每个文档子目录为一个完整独立的日志范围，每个文件夹各自使用 Zettelkasten 方法管理所有知识。
 
-All documents should include YAML front matter at the top, for example:
+所有文档顶部应包含 YAML front matter，例如：
 ```
 ---
-description: Document description; brief explanation of the document's purpose
+description: 文档描述，简短说明此文档的用途
 type: Fleeting | Literature | Permanent
 ---
 ```
 
-## File Naming Convention
+## 文件命名规范
 
-- Use a unique identifier (ID) as the file name prefix, such as `01-`, `20240101-`
-- IDs are only used for sorting and deduplication; they do not represent priority or time sequence
-- The title follows the ID, separated by hyphens, e.g., `01-AIMP-PRD.md`
+- 使用唯一标识符（ID）作为文件名开头，如 `01-`、`20240101-`
+- ID 仅用于排序和去重，不代表优先级或时间顺序
+- 标题紧跟 ID 之后，使用连字符分隔，如 `01-AIMP-PRD.md`
 
-### Atomicity Principle
+### 原子化原则
 
-- Each file is an independent knowledge atom, containing one core idea or concept
-- Avoid mixing multiple topics in one file
-- If content is too extensive, split into multiple files and establish links
+- 每个文件是独立的知识原子，包含一个核心观点或概念
+- 避免在一个文件中混合多个主题
+- 如果内容过多，应拆分为多个文件并建立链接
 
-### Linking Convention
+### 链接规范
 
-- Use Markdown link syntax: `[[filename]]` to link files in the same directory
-- Linked target files should contain sufficient context to avoid orphaned references
-- Avoid excessive linking; each file should have no more than 7 bidirectional links
+- 使用 Markdown 链接语法：`[[文件名]]` 链接同目录文件
+- 链接目标文件应包含足够的上下文，避免孤立引用
+- 避免过度链接，每个文件建议不超过 7 个双向链接
 
-### Note Types
+### 笔记类型
 
-| Type | Description |
-|------|-------------|
-| Fleeting | Temporary thoughts; pending organization |
-| Literature | Book notes / reference material summaries |
-| Permanent | Independent knowledge atoms; can be cited long-term |
+| 类型 | 说明 |
+|------|------|
+| Fleeting | 临时想法，待整理 |
+| Literature | 读书笔记/参考资料摘要 |
+| Permanent | 独立知识原子，可被长期引用 |
 
-### Context Requirements
+### 上下文要求
 
-- Each file should include background explanation at the top, explaining the document's purpose
-- When necessary, add a "Related Documents" section at the end, listing associated files
+- 每个文件顶部应包含背景说明，解释此文档的用途
+- 必要时在文件末尾添加「相关文档」小节，列出关联文件
 
-## Diagram Drawing Standards
+## 图形绘制规范
 
-All flowcharts, architecture diagrams, sequence diagrams, etc. in documents must be drawn using Mermaid syntax. External image files are prohibited.
+所有文档中的流程图、架构图、时序图等图形必须使用 Mermaid 语法绘制，禁止使用外部图片文件。
 
-### Mermaid Usage Requirements
+### Mermaid 使用要求
 
-- Wrap Mermaid syntax with ` ```mermaid ` code blocks
-- Keep diagrams simple and clear; avoid overly complex diagrams
-- Diagrams should have descriptive titles
+- 使用 ` ```mermaid ` 代码块包裹 Mermaid 语法
+- 保持图形简洁清晰，避免过于复杂的图形
+- 图形应具有描述性标题
 
-**Example**:
+**示例**：
 
 ```mermaid
 flowchart TD
-    A[Start] --> B{Condition}
-    B -->|Condition1| C[Process1]
-    B -->|Condition2| D[Process2]
-    C --> E[End]
+    A[开始] --> B{判断}
+    B -->|条件1| C[处理1]
+    B -->|条件2| D[处理2]
+    C --> E[结束]
     D --> E
 ```
 
-### Supported Diagram Types
+### 支持的图形类型
 
-| Type | Purpose |
-|------|---------|
-| flowchart | Flowcharts, decision trees |
-| sequenceDiagram | Sequence diagrams, interaction diagrams |
-| classDiagram | Class diagrams, architecture diagrams |
-| stateDiagram | State diagrams |
-| entityRelationshipDiagram | ER diagrams |
-| gantt | Project progress charts |
-| pie | Pie charts |
+| 类型 | 用途 |
+|------|------|
+| flowchart | 流程图、决策树 |
+| sequenceDiagram | 时序图、交互图 |
+| classDiagram | 类图、架构图 |
+| stateDiagram | 状态图 |
+| entityRelationshipDiagram | ER 图 |
+| gantt | 项目进度图 |
+| pie | 饼图 |
+
+

@@ -1,9 +1,9 @@
-# Writing Technical Proposal
+# 编写技术方案
 
-Read the `<product document>`, `docs/engineering/frontend-rules.md`, `docs/engineering/backend-rules.md`, and structure under the `contract/` directory.
+读取 `<产品文档>`,  `docs/engineering/frontend-rules.md`, `docs/engineering/backend-rules.md`和 `contract/`目录下的结构。
 
-For template reference, see [[dev/dev-proposal-template.md]].
+模板参考[[dev/dev-proposal-template.md]]。
 
-Following [[git.md]] conventions, use `proposal` as the branch prefix `<type>`, based on `<feat-branch>`. After writing, save to the proposals file at path `docs/engineering/proposals/<YYYYMMDD>-proposal-<feature>.md`. Submit a pull request with the target branch being `<feat-branch>`. After completion, break the Agent loop and wait for user review of this pull request.
+使用[[git.md]]规范，分支前缀的`<type>`使用`proposal`，分支基于`<feat-branch>`，编写完成后写入`proposals`文件，路径为`docs/engineering/proposals/<年月日>-proposal-<功能>.md`，并提pull request，合并的目标分支是`<feat-branch>`，完成后中断agent循环，让用户review这个pull request。
 
-If there are modification suggestions, address the review comments and inline review comments from the pull request, make modifications. If the user explicitly states the review passed, merge this pull request into `<feat-branch>`.
+如果有修改意见则让提取pull request中的review comment和inline review comment，进行修改，如果用户显式告知review通过则操作合并这个pull request到`<feat-branch>`。
