@@ -23,6 +23,8 @@ description: 'USE FOR: debug, debugging, test, api test, e2e test, test environm
 
 在用户显式的说没有其他补充时，进入到下一个环节。
 
+如果有orchestrator相关技能，可以尝试使用，拉起项目使用e2e和图片理解能力确认问题。
+
 ## 环境准备
 
 使用 `@general` subagent 来准备环境：使用<SKILL: z-git> （如果没有z-git这个skill，可以无视分支管理这部分，或者遵循其他分支管理的skill规范）或其他skill中的git进行分支管理，每次进行调查根据当前分支创建新的`worktree`，`<type>`为`issues`，`<slug>`为上面核实问题的简写。在这个新的`worktree`进行后续操作
