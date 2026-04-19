@@ -4,7 +4,7 @@
 
 ## 分支管理
 
-使用[[git.md]]进行分支管理，每次进行集成API test都会基于`<dev-branc>`创建新的`worktree`，`<type>`为`e2e`。在这个新的`worktree`进行项目开发
+使用<SKILL: z-git> （如果没有z-git这个skill，可以无视分支管理这部分，或者遵循其他分支管理的skill规范）或其他skill中的git进行分支管理，每次进行集成API test都会基于`<dev-branc>`创建新的`worktree`，`<type>`为`e2e`。在这个新的`worktree`进行项目开发
 
 ## 项目路径
 

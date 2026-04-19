@@ -3,7 +3,7 @@
 如果是多服务的项目，推荐结构如下
 
 ```
-server/           - 存放后端项目
+servers/           - 存放后端项目
 apps/             - 存放前端项目
 packages/         - 存放公共项目
 docs/             - 存放相关文档
@@ -20,10 +20,10 @@ tests/            - 存放集成测试、API测试、e2e测试项目
 
 例如（只是举例）：
 ```
-server/domainA-api
-server/domainB-api
-server/product-bff
-server/product-gateway
+servers/domainA-api
+servers/domainB-api
+servers/product-bff
+servers/product-gateway
 
 apps/domainA-web
 apps/domainB-web
@@ -38,10 +38,9 @@ docs/product/draft/20260415-some-domain-featrue.md
 docs/product/shipping/20260415-another-domain-featrue.md
 docs/product/released/20260415-one-another-domain-featrue.md
 
-contracts/changes/pending/20260415-changes-for-some-domain-featrue.md
-contracts/changes/applied/
 contracts/domainA.graphql
 contracts/domainB-openapi.yaml
+contracts/domainC-websocket.md
 
 tests/domainA-api-test
 tests/domainA-web-e2e

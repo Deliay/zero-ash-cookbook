@@ -1,6 +1,6 @@
 # Project Structure
 
-如果是多项目的monorepo，则按照 [[reference/mono-repo-project-structure.md]] 中的内容创建项目结构。
+如果是多项目的monorepo，则按照 [[mono-repo-project-structure.md]] 中的内容创建项目结构。
 
 如果是单个服务，则根目录直接存放项目本身，但有额外几个存储项目:
 

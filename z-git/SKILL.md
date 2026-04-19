@@ -1,3 +1,8 @@
+---
+name: z-git
+description: 'USE FOR: source code management, SCM, git, commit, worktree'
+---
+
 # Git操作规范
 
 ## 禁止change base
@@ -32,4 +37,4 @@
 
 ## Pull Request规范
 
-在合并pull request后，需要删除远端和本地的分支，注意**不要**删除目标分支。
+在合并pull request后，需要删除远端和本地的分支，注意**不要**删除`pull request`的目标分支。

@@ -1,6 +1,15 @@
-# Development workflow
+---
+name: z-coding
+description: 'USE FOR: development, dev, write code, read code, write tech proposal documents, api test, e2e test, implemention, implement product, debug, fix issue, troubleshooting, development workflow. 开发，写代码，读取代码，技术文档，技术方案，写测试，更新测试，实现产品逻辑，写技术方案，开发流程，开发规范'
+---
+
+# 开发流程
 
 你需要严格按照契约式来进行开发，例如 `openapi-spec`, `graphql-schema` 放置在 `contract/` 中。
+
+## 文档标准
+
+编写文档使用一个统一标准的格式，如：<SKILL: z-document>。
 
 ## 阅读产品文档
 
@@ -28,7 +37,7 @@
 
 ### 编写技术方案
 
-USE FOR: write proposals, update proposals
+USE FOR: write proposal, update proposal
 REFERENCE: [[dev/dev-proposal-template.md]]
 
 ### 更新Contract
@@ -38,20 +47,13 @@ REFERENCE: [[dev/update-contract.md]]
 
 ### 编写实现
 
-USE FOR: implements, write code, implmenent
+USE FOR: implemention, write code, coding
 REFERENCE: [[dev/write-implementation.md]]
 
 ### 编排服务
 
-USE FOR: service orchestration, update infra, infurstructure, aspire, run services, start services, docker, compose
-REFERENCE: [[dev/infra-orchestrator.md]]
+默认使用 <SKILL: z-aspire-orchestrator>， 如果没有则使用docker-compose+本地启动进行编排。
 
-## 编写集成 API test
+## 编写集成 API test & e2e test
 
-USE FOR: integrate test for api service, api test
-REFERENCE: [[dev/integrate-test-api.md]]
-
-## 编写集成 e2e test
-
-USE FOR: integrate test for frontend
-REFERENCE: [[dev/integrate-test-e2e.md]]
+默认使用 <SKILL: z-test>， 如果则自行决定如何覆盖。

@@ -1,16 +1,26 @@
+---
+name: z-aspire-orchestrator
+description: 'USE FOR: service orchestration, aspire, docker, podman'
+---
+
 # 编排服务
 
 我们在`infra/`文件夹下进行项目的编排，使用`aspire`及其`skill`。
 
 ## 初始化aspire skill
 
-如果用户环境没有安装aspire，则提示去 [aspire 官网](https://aspire.dev/)下载安装，中止agent流程，如果用户显式证明不用 aspire进行编排，则跳过编排流程。
+如果用户环境没有安装aspire，则中止agent流程，如果用户显式说明不用aspire进行编排，则跳过编排流程。
 
-如果用户环境安装了aspire，则引用 [[ref/aspire-skill.md]] 的知识进行后续操作。
+如果用户环境安装了`aspire`，则引用 [[aspire.md]] 的知识进行后续操作。
+
+检查脚本
+```bash
+aspire --version
+```
 
 ## 初始化编排环境
 
-在执行到编排环节时，编排服务需要使用[[git.md]]的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`infra`。如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下
+在执行到编排环节时，编排服务需要使用<SKILL: z-git> （如果没有z-git这个skill，可以无视分支管理这部分，或者遵循其他分支管理的skill规范）或其他skill中的git的能力，基于`<dev-branch>`创建`worktree`，`<type>`为`infra`。如果没有`infra/local-dev`目录，则默认为用户创建用于本地开发编排的`aspire`项目，在`infra/local-dev`目录下
 
 如果还没有`local-dev`的aspire项目，则新建项目，执行 `aspire init --language typescript` 进行新建项目。
 
@@ -24,9 +34,21 @@
 
 ## 完成编排
 
-在编排完成后，在`local-dev`文件夹使用`npm run aspire:build`和`npm run aspire:lint`来检查改动是否正确。
+在编排完成后，在`local-dev`文件夹使用`npm run aspire:build`和`npm run aspire:lint`来编译编排脚本，并检查改动是否正确。
 
-使用 `aspire stop` + `aspire restore` + `aspire start` + `aspire describe`启动 aspire 并检查各个服务都应该启动成功。
+```bash
+npm run aspire:lint
+npm run aspire:build
+```
+
+并检查各个服务都应该启动成功：
+
+```bash
+aspire stop
+aspire restore
+aspire start
+aspire describe
+```
 
 然后提`pull request`要求用户review，直到用户显式说明review通过，或者pull request状态已经是merge了，再进行下一个步骤。
 

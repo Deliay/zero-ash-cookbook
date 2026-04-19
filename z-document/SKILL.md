@@ -1,3 +1,8 @@
+---
+name: z-document
+description: 'USE FOR: write document, update document, archive document, 写文档, 更新文档'
+---
+
 # 文档规范
 
 每个文档子目录为一个完整独立的日志范围，每个文件夹各自使用 Zettelkasten 方法管理所有知识。
@@ -73,5 +78,3 @@ flowchart TD
 | entityRelationshipDiagram | ER 图 |
 | gantt | 项目进度图 |
 | pie | 饼图 |
-
-

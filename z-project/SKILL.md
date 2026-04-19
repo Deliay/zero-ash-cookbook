@@ -1,7 +1,16 @@
+---
+name: z-project
+description: 'USE FOR: project manage, create project, new project, read project, 项目管理，创建项目，读取项目'
+---
+
 # Create Project
 
 创建项目遵照如下流程：
 业务建模 -> 技术栈选型 -> 创建项目结构 -> 开发规范 -> 初始化各个项目 -> 服务编排
+
+## 文档标准
+
+编写文档使用一个统一标准的格式，如：<SKILL: z-document>。
 
 ## 项目服务建模
 
