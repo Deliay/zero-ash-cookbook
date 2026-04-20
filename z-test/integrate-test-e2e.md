@@ -36,6 +36,10 @@ e2e test之后提一个`pull request`让用户进行review，`pull request`的`d
 
 启动的目标后端endpoint可以通过`aspire describe <service-slug>`获取，如`aspire describe web-a`即可拿到endpoint，这里推荐通过环境变量将endpoint注入给测试项目。
 
+## 测试编写标准
+
+每个e2e测试在编写时**必须**有截图进行验证，开始操作的截图，操作完成的截图，需要有明确的操作路径验证。如果无法在UI上有所体现，则进行network的inspect。在测试编写完成时需要截图验证，但在测试编写完成后，去掉截图验证的逻辑。
+
 ## 修复测试发现的问题
 
 如果 test case 执行后发生不符合预期，或者出现报错的情况，使用 `@general` subagent 委托进行修复：让其加载`docs/engineering`与对应项目的`AGENTS.md`内容，然后传递出错的API和`aspire`上下文给 subagent，后进行修复，直接在这次test的`worktree`上修复即可。
