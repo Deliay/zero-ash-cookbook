@@ -8,6 +8,10 @@ description: 'USE FOR: product design, product solution, write product document,
 
 产品文档一般放置在`docs/product`文件夹中。产品文档中禁止提及技术细节，**禁止提及项目结构、前端结构、前端组件、后端API设计等内容**
 
+## 优先使用SKILL
+
+在你不确定的时候，优先从已经有的SKILL中检索知识。有SKILL则使用SKILL。
+
 ## 文档标准
 
 编写文档使用一个统一标准的格式，如：<SKILL: z-document>。

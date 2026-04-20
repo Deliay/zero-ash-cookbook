@@ -7,6 +7,10 @@ description: 'USE FOR: service orchestration, aspire, docker, podman'
 
 我们在`infra/`文件夹下进行项目的编排，使用`aspire`及其`skill`。
 
+## 优先使用SKILL
+
+在你不确定的时候，优先从已经有的SKILL中检索知识。有SKILL则使用SKILL。
+
 ## 初始化aspire skill
 
 如果用户环境没有安装aspire，则中止agent流程，如果用户显式说明不用aspire进行编排，则跳过编排流程。

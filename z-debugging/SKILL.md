@@ -11,6 +11,10 @@ description: 'USE FOR: debug, debugging, test, api test, e2e test, test environm
 3. 勤看日志：查看浏览器的debug console和使用`aspire logs`(<SKILL: z-aspire-orchestrator>)或`docker logs`来看日志诊断问题
 4. e2e要勤看截图，使用playwright的截图能力配合图片理解工具进行诊断。
 
+## 优先使用SKILL
+
+在你不确定的时候，优先从已经有的SKILL中检索知识。有SKILL则使用SKILL。
+
 ## 调试工作流
 
 使用`todo`工具新建如下`todo`
@@ -23,7 +27,7 @@ description: 'USE FOR: debug, debugging, test, api test, e2e test, test environm
 
 在用户显式的说没有其他补充时，进入到下一个环节。
 
-如果有orchestrator相关技能，可以尝试使用，拉起项目使用e2e和图片理解能力确认问题。
+如果有orchestrator相关技能，如 <SKILL: z-aspire-orchestrator>，可以尝试使用，拉起项目使用e2e和图片理解能力确认问题。
 
 ## 环境准备
 

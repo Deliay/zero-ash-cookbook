@@ -8,6 +8,10 @@ description: 'USE FOR: project manage, create project, new project, read project
 创建项目遵照如下流程：
 业务建模 -> 技术栈选型 -> 创建项目结构 -> 开发规范 -> 初始化各个项目 -> 服务编排
 
+## 优先使用SKILL
+
+在你不确定的时候，优先从已经有的SKILL中检索知识。有SKILL则使用SKILL。
+
 ## 文档标准
 
 编写文档使用一个统一标准的格式，如：<SKILL: z-document>。

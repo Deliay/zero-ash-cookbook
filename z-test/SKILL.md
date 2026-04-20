@@ -12,6 +12,10 @@ description: 'USE FOR: run test, api test, e2e test, tdd'
 如果只需要e2e test则为：确定测试范围 -> 覆盖e2e test -> 完成e2e test。
 如果只需要API test则为：确定测试范围 -> 覆盖API test -> 完成API test。
 
+## 优先使用SKILL
+
+在你不确定的时候，优先从已经有的SKILL中检索知识。有SKILL则使用SKILL。
+
 ## 确定测试范围
 
 如果上下文中有开发流程及其上下文，则测试范围已确定，否则中断agent让用户输入测试范围。

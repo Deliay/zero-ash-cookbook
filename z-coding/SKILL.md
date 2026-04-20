@@ -7,6 +7,10 @@ description: 'USE FOR: development, dev, write code, read code, write tech propo
 
 你需要严格按照契约式来进行开发，例如 `openapi-spec`, `graphql-schema` 放置在 `contract/` 中。
 
+## 优先使用SKILL
+
+在你不确定的时候，优先从已经有的SKILL中检索知识。有SKILL则使用SKILL。
+
 ## 文档标准
 
 编写文档使用一个统一标准的格式，如：<SKILL: z-document>。
