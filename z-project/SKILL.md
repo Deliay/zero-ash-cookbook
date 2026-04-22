@@ -42,6 +42,19 @@ REFERENCE: [[project-structure.md]]
 
 项目初始化完成后，在文档`docs/engineering/`文件夹中生成相关技术栈的统一规范，并在各个项目中的`AGENTS.md`引用这些规范。
 
+AGENTS.md中需要显示的注明，要求agent要有SKILL就用SKILL，并附上如下SKILL引用说明：
+
+| Skill | Description |
+|------|------|
+| z-product | 产品文档创建与生命周期管理 (PRD 工作流) |
+| z-project | 项目创建与管理 (monorepo 支持、技术栈选择) |
+| z-coding | 契约式开发工作流 (提案、契约、实现) |
+| z-git | Git 工作流管理 (使用 worktree) |
+| z-document | 文档规范 (Zettelkasten 方法、Mermaid 图表) |
+| z-aspire-orchestrator | 使用 Microsoft Aspire 进行服务编排 |
+| z-test | API 测试和 E2E 测试工作流 |
+| z-debugging | 调试方法论与故障排除 |
+
 引用关系例如：
 ```
 docs/engineering/common-rules.md
@@ -55,17 +68,7 @@ docs/engineering/backend-rules.md
 
 `backend-rules.md`包含：后端的统一规范，初始化指令，项目选型，项目结构，测试框架，contract中的契约生成器(codegen)等规范。除了特殊指定，否则都使用这个文件里的选型。需要按照具体的技术栈选型展开写入详细内容。
 
-AGENTS.md中需要显示的注明，要求agent要有SKILL就用SKILL，并附上如下SKILL引用说明
-| Skill | Description |
-|------|------|
-| z-product | 产品文档创建与生命周期管理 (PRD 工作流) |
-| z-project | 项目创建与管理 (monorepo 支持、技术栈选择) |
-| z-coding | 契约式开发工作流 (提案、契约、实现) |
-| z-git | Git 工作流管理 (使用 worktree) |
-| z-document | 文档规范 (Zettelkasten 方法、Mermaid 图表) |
-| z-aspire-orchestrator | 使用 Microsoft Aspire 进行服务编排 |
-| z-test | API 测试和 E2E 测试工作流 |
-| z-debugging | 调试方法论与故障排除 |
+
 
 ## 初始化各个项目
 
