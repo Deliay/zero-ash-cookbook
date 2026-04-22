@@ -55,13 +55,26 @@ docs/engineering/backend-rules.md
 
 `backend-rules.md`包含：后端的统一规范，初始化指令，项目选型，项目结构，测试框架，contract中的契约生成器(codegen)等规范。除了特殊指定，否则都使用这个文件里的选型。需要按照具体的技术栈选型展开写入详细内容。
 
+AGENTS.md中需要显示的注明，要求agent要有SKILL就用SKILL，并附上如下SKILL引用说明
+| Skill | Description |
+|------|------|
+| z-product | 产品文档创建与生命周期管理 (PRD 工作流) |
+| z-project | 项目创建与管理 (monorepo 支持、技术栈选择) |
+| z-coding | 契约式开发工作流 (提案、契约、实现) |
+| z-git | Git 工作流管理 (使用 worktree) |
+| z-document | 文档规范 (Zettelkasten 方法、Mermaid 图表) |
+| z-aspire-orchestrator | 使用 Microsoft Aspire 进行服务编排 |
+| z-test | API 测试和 E2E 测试工作流 |
+| z-debugging | 调试方法论与故障排除 |
+
 ## 初始化各个项目
 
 按照技术栈选型在对应的项目结构的目录中初始化项目
 
 优先使用技术栈官方提供的cli/脚手架创建，如果没有再由大模型来生成项目。
 
-这里需要注意官方提供的脚手架是否会创建子目录，如果会的话使用在当前目录直接创建的命令
+这里需要注意官方提供的脚手架是否会创建子目录，如果会的话使用在当前目录直接创建的命令。
+
 如：
 
 ```bash
@@ -75,6 +88,8 @@ npx create-react-app --template typescript .
 ```
 
 然后安装相关的依赖，这些依赖在前置的选型中有表明。
+
+如果用户在前置的`ask`,`question`环节输入了一下业务的概述，不要为这些概述生成任何代码。只搭建项目框架。
 
 初始化完成之后，在对应项目的目录生成这个项目的技术栈简单说明，写入项目的`AGENTS.md`中。
 

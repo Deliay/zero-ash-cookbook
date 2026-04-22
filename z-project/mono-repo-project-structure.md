@@ -1,8 +1,7 @@
 # Project Structure of Monolithic Repository
 
-如果是多服务的项目，推荐结构如下
+如果是多服务的项目，推荐结构如下（只是距离）
 
-```
 servers/           - 存放后端项目
 apps/             - 存放前端项目
 packages/         - 存放公共项目
@@ -16,7 +15,6 @@ docs/engineering  - 存放开发规范
 docs/engineering/proposals/ - 存放开发技术文档
 contracts/        - 存放开发契约文件（如openapi-spec, graphql-schema）
 tests/            - 存放集成测试、API测试、e2e测试项目
-```
 
 例如（只是举例）：
 ```
