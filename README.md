@@ -9,7 +9,7 @@
 | [z-product](./z-product/) | 产品文档创建与生命周期管理 (PRD 工作流) |
 | [z-project](./z-project/) | 项目创建与管理 (monorepo 支持、技术栈选择) |
 | [z-coding](./z-coding/) | 契约式开发工作流 (提案、契约、实现) |
-| [z-git](./z-git/) | Git 工作流管理 (使用 worktree) |
+| [z-git](./z-git/) | Git 工作流管理 |
 | [z-document](./z-document/) | 文档规范 (Zettelkasten 方法、Mermaid 图表) |
 | [z-aspire-orchestrator](./z-aspire-orchestrator/) | 使用 Microsoft Aspire 进行服务编排 |
 | [z-test](./z-test/) | API 测试和 E2E 测试工作流 |
@@ -20,7 +20,7 @@
 遵循**契约式开发**流程：
 
 1. 阅读产品文档
-2. 通过 git worktree 创建功能分支
+2. 创建功能分支
 3. 编写技术提案
 4. 定义 API 契约 (OpenAPI, GraphQL)
 5. 通过 subagent 并行实现代码
@@ -45,7 +45,7 @@ zero-ash-cookbook/
 ├── z-product/              # 产品生命周期
 ├── z-project/              # 项目管理
 ├── z-coding/               # 开发工作流
-├── z-git/                  # Git worktree 工作流
+├── z-git/                  # Git 工作流
 ├── z-document/             # 文档规范
 ├── z-aspire-orchestrator/  # 服务编排
 ├── z-test/                 # 测试工作流
